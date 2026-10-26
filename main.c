@@ -4,7 +4,10 @@ int main(void) {
     char name[50];
 
     printf("What is your name? ");
-    scanf("%49s", name);
+    if (scanf("%49s", name) != 1) {
+        printf("No name entered.\n");
+        return 1;
+    }
     printf("Hello, %s!\n", name);
     return 0;
 }
